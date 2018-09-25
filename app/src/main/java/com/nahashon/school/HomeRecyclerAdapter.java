@@ -1,6 +1,8 @@
 package com.nahashon.school;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,9 +42,16 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
 
     class MyHolder extends RecyclerView.ViewHolder{
-
+            CardView cardView;
         public MyHolder(View view){
             super(view);
+            cardView = view.findViewById(R.id.subjectStrip);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(new Intent(context,Subject.class));
+                }
+            });
 
 
 
