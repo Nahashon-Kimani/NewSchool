@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/all_q"
+        android:orderInCategory="100"
+        android:icon="@drawable/test"
+        app:showAsAction="ifRoom"
+        android:title="@string/all" />
+    <item
+        android:id="@+id/answered_q"
+        android:orderInCategory="101"
+        android:icon="@drawable/test"
+        app:showAsAction="ifRoom"
+        android:title="@string/answered" />
+    <item
+        android:id="@+id/my_q"
+        android:icon="@drawable/test"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="102"
+        android:title="@string/myq" />
+</menu>
