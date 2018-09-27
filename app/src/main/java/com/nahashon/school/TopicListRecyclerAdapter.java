@@ -1,11 +1,13 @@
 package com.nahashon.school;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.zip.Inflater;
@@ -32,6 +34,12 @@ Context context;
     public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
 
         myHolder.textView.setText(Integer.toString(i+1));
+        myHolder.topicView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context,NoteViewer.class));
+            }
+        });
 
 
     }
@@ -43,9 +51,11 @@ Context context;
 
     class MyHolder extends RecyclerView.ViewHolder{
             TextView textView;
+            LinearLayout topicView;
         public MyHolder(View view){
             super(view);
             textView = view.findViewById(R.id.topicTextView);
+            topicView= view.findViewById(R.id.topicView);
         }
     }
 }

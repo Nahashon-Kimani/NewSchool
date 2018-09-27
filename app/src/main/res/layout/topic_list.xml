@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:orientation="horizontal"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:id="@+id/topicView"
+    >
 
     <TextView
         style="@style/topic_list_Style"
