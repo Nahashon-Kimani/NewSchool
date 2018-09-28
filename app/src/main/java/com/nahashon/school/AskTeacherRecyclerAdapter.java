@@ -32,7 +32,6 @@ public class AskTeacherRecyclerAdapter extends RecyclerView.Adapter<AskTeacherRe
              @Override
              public void onClick(View view) {
                  myHolder.el.toggle(true);
-                 myHolder.el.toggle();
              }
          });
     }
