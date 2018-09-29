@@ -4,10 +4,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="one">1</string>
-    <string name="preview">Preview</string>
+    <string name="objective">Objectives</string>
     <string name="ask_a_teacher">Ask A Teacher</string>
     <string name="assign">Assignment</string>
     <string name="answered">Answered</string>
     <string name="myq">MyQ</string>
     <string name="all">ALL</string>
+    <string name="question">Question</string>
+    <string name="time">Time</string>
+    <string name="sender_name">Sender name</string>
+    <string name="view_answer">Click to view answer</string>
+    <string name="send">Send</string>
+    <string name="type_q_here">Type question here</string>
+    <string name="context_m">Context Menu</string>
 </resources>
