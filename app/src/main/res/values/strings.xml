@@ -17,4 +17,65 @@
     <string name="send">Send</string>
     <string name="type_q_here">Type question here</string>
     <string name="context_m">Context Menu</string>
+
+    <string-array name="level">
+        <item>HIV/AIDS and Drugs Abuse Awareness</item>
+        <item>Literacy Level</item>
+        <item>Primary Level</item>
+        <item>Secondary Level</item>
+        <item>Computer Studies</item>
+        <item>Entrepreneurship</item>
+    </string-array>
+
+    <string-array name="hiv_drug_awareness">
+        <item>HIV/AIDS AWARENESS</item>
+        <item>DRUGS ABUSE AWARENESS</item>
+    </string-array>
+
+    <string-array name="literacy_level">
+        <item>English</item>
+        <item>Swahili</item>
+        <item>Mathematics</item>
+    </string-array>
+
+    <string-array name="primary_level">
+        <item>English</item>
+        <item>Swahili</item>
+        <item>Mathematics</item>
+        <item>Science</item>
+        <item>Social Studies</item>
+        <item>Religion Education</item>
+    </string-array>
+
+    <string-array name="secondary_level">
+        <item>English</item>
+        <item>Swahili</item>
+        <item>Mathematics</item>
+        <item>Biology</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>History</item>
+        <item>Geography</item>
+        <item>Religious Education</item>
+        <item>Business Studies</item>
+        <item>Agriculture</item>
+    </string-array>
+
+    <string-array name="computer_studies">
+        <item>Introduction to Computing</item>
+        <item>Introduction to Windows</item>
+        <item>Ms Word</item>
+        <item>Ms Excel</item>
+        <item>Ms Access</item>
+        <item>Ms Powerpoint</item>
+        <item>Ms Publisher</item>
+        <item>Internet and Emailing</item>
+        <item>PC Maintenance</item>
+    </string-array>
+
+    <string name="hiv_drug_desc">This is a level designed for everyone to alert them about the effect of drug abuse and create awareness on HIV.</string>
+    <string name="literacy_desc">This is a level designed for beginners in education to learn howt o read, write and practice usage of the language.</string>
+    <string name="primary_sec_desc">This level is designed for class eight candidates who need to pursue their KCPE Certificate</string>
+    <string name="sec_desc">This level is designed for High school students who need to pursue their KCSE Certificate</string>
+    <string name="comp_desc">A self paced program for computer students for general knowledge and explore computer knowledge.</string>
 </resources>

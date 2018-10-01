@@ -18,10 +18,11 @@ import android.widget.Toast;
 
 import java.util.zip.Inflater;
 
-public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecyclerAdapter.MyHolder>{
+public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecyclerAdapter.MyHolder> {
 
-Context context;
-    public TopicListRecyclerAdapter(Context context){
+    Context context;
+
+    public TopicListRecyclerAdapter(Context context) {
         this.context = context;
 
 
@@ -32,28 +33,29 @@ Context context;
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.topic_list,viewGroup,false);
+        View view = inflater.inflate(R.layout.topic_list, viewGroup, false);
         return new MyHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
 
-        myHolder.textView.setText(Integer.toString(i+1));
+        myHolder.textView.setText(Integer.toString(i + 1));
         myHolder.topicView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context,NoteViewer.class));
+                context.startActivity(new Intent(context, NoteViewer.class));
             }
         });
-        final PopupMenu popupMenu = new PopupMenu(context,myHolder.menuOpener);
+        final PopupMenu popupMenu = new PopupMenu(context, myHolder.menuOpener);
 
-        popupMenu.getMenuInflater().inflate(R.menu.popup_menu,popupMenu.getMenu());
+        popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
 
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.objectives:
                         Toast.makeText(context, "Objectives", Toast.LENGTH_SHORT).show();
                 }
@@ -72,11 +74,6 @@ Context context;
         });
 
 
-
-
-
-
-
     }
 
     @Override
@@ -85,15 +82,16 @@ Context context;
     }
 
 
-    class MyHolder extends RecyclerView.ViewHolder{
-            TextView textView;
-            LinearLayout topicView;
-            ImageView menuOpener;
-        public MyHolder(View view){
+    class MyHolder extends RecyclerView.ViewHolder {
+        TextView textView;
+        LinearLayout topicView;
+        ImageView menuOpener;
+
+        public MyHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.topicTextView);
-            topicView= view.findViewById(R.id.topicView);
-            menuOpener=view.findViewById(R.id.menu_opener);
+            topicView = view.findViewById(R.id.topicView);
+            menuOpener = view.findViewById(R.id.menu_opener);
 
 
         }
