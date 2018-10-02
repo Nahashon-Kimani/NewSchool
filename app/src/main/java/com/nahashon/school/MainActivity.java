@@ -19,4 +19,5 @@ RecyclerView homeRecyclerView;
         homeRecyclerView.setAdapter(new HomeRecyclerAdapter(this));
 
     }
+
 }

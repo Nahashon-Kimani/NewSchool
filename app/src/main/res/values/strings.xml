@@ -27,6 +27,15 @@
         <item>Entrepreneurship</item>
     </string-array>
 
+    <string-array name="description">
+        <item name="hiv_drug_desc">This is a level designed for everyone to alert them about the effect of drug abuse and create awareness on HIV.</item>
+        <item name="literacy_desc">This is a level designed for beginners in education to learn how to read, write and practice usage of the language.</item>
+        <item name="primary_sec_desc">This level is designed for class eight candidates who need to pursue their KCPE Certificate</item>
+        <item name="sec_desc">This level is designed for High school students who need to pursue their KCSE Certificate</item>
+        <item name="comp_desc">A self paced program for computer students for general knowledge and explore computer knowledge.</item>
+        <item name="comp_desc">A self paced program for computer students for general knowledge and explore computer knowledge.</item>
+    </string-array>
+
     <string-array name="hiv_drug_awareness">
         <item>HIV/AIDS AWARENESS</item>
         <item>DRUGS ABUSE AWARENESS</item>
@@ -73,9 +82,5 @@
         <item>PC Maintenance</item>
     </string-array>
 
-    <string name="hiv_drug_desc">This is a level designed for everyone to alert them about the effect of drug abuse and create awareness on HIV.</string>
-    <string name="literacy_desc">This is a level designed for beginners in education to learn howt o read, write and practice usage of the language.</string>
-    <string name="primary_sec_desc">This level is designed for class eight candidates who need to pursue their KCPE Certificate</string>
-    <string name="sec_desc">This level is designed for High school students who need to pursue their KCSE Certificate</string>
-    <string name="comp_desc">A self paced program for computer students for general knowledge and explore computer knowledge.</string>
+
 </resources>
