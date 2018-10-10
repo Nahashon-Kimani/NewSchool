@@ -18,6 +18,7 @@ RecyclerView homeRecyclerView;
         homeRecyclerView.setLayoutManager(manager);
         homeRecyclerView.setAdapter(new HomeRecyclerAdapter(this));
 
+
     }
 
 }

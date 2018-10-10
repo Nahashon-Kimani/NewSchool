@@ -9,29 +9,85 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SubjectFragment extends Fragment {
 RecyclerView recyclerView;
+List<String> list = new ArrayList<>();
+DatabaseReference databaseReference;
 
     public SubjectFragment() {
-        // Required empty public constructor
+
     }
 
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+
+
+
+
+
+}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_subject, container, false);
 
+        Bundle bundle = getArguments();
+
+
+
         recyclerView = view.findViewById(R.id.topicRecyclerView);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new TopicListRecyclerAdapter(getContext()));
+        databaseReference= FirebaseDatabase.getInstance().getReference("Level").child(bundle.getString("Level")).child(bundle.getString("Subject"));
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                    list.add(snapshot.getKey());
+
+
+
+
+                }
+               TopicListRecyclerAdapter adapter = new TopicListRecyclerAdapter(getContext(),list);
+                adapter.notifyDataSetChanged();
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+
+
+
+
 
 
 

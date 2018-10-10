@@ -6,6 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Subject extends AppCompatActivity {
     TabLayout subjectTablaout;
     ViewPager subjectViewPager;
@@ -29,17 +31,22 @@ public class Subject extends AppCompatActivity {
      String[] levelArray = getResources().getStringArray(R.array.level);
 
 
+
+
         switch (level){
 
                 case 0:
-                    setFragment(getResources().getStringArray(R.array.hiv_drug_awareness));
+
+                    setFragment(getResources().getStringArray(R.array.hiv_drug_awareness),"Hiv/DrugAbuse");
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.aids);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.drug);
 
 
+
                 break;
                 case 1:
-                    setFragment(getResources().getStringArray(R.array.literacy_level));
+
+                    setFragment(getResources().getStringArray(R.array.literacy_level),"Literacy");
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.english);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.kiswahili);
                     subjectTablaout.getTabAt(2).setIcon(R.drawable.math);
@@ -47,7 +54,7 @@ public class Subject extends AppCompatActivity {
                 break ;
 
                 case 2:
-                    setFragment(getResources().getStringArray(R.array.primary_level));
+                    setFragment(getResources().getStringArray(R.array.primary_level),"Primary");
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.english);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.kiswahili);
                     subjectTablaout.getTabAt(2).setIcon(R.drawable.math);
@@ -58,7 +65,7 @@ public class Subject extends AppCompatActivity {
                 break;
 
                 case 3:
-                    setFragment(getResources().getStringArray(R.array.secondary_level));
+                    setFragment(getResources().getStringArray(R.array.secondary_level),"Secondary");
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.english);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.kiswahili);
                     subjectTablaout.getTabAt(2).setIcon(R.drawable.math);
@@ -73,7 +80,7 @@ public class Subject extends AppCompatActivity {
 
                 break;
                 case 4:
-                    setFragment(getResources().getStringArray(R.array.computer_studies));
+                    setFragment(getResources().getStringArray(R.array.computer_studies),"Computer");
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.introduction_to_computing);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.introduction_to_computing);
                     subjectTablaout.getTabAt(2).setIcon(R.drawable.word);
@@ -86,12 +93,12 @@ public class Subject extends AppCompatActivity {
 
                 break;
                 case 5:
-                    setFragment(getResources().getStringArray(R.array.computer_studies));
+                    setFragment(getResources().getStringArray(R.array.computer_studies),"Computer");
 
                 break;
 
                 default:
-                    setFragment(getResources().getStringArray(R.array.hiv_drug_awareness));
+                    setFragment(getResources().getStringArray(R.array.hiv_drug_awareness),"Hiv/Drugs");
 
                 break;
 
@@ -123,15 +130,20 @@ public class Subject extends AppCompatActivity {
 
     }
 
-    public void setFragment(String[] array){
+    public void setFragment(String[] array,String level){
+        Bundle bundle;
 
         for(int i=0;i<=(array.length-1);i++){
-            subject.addProperties(new SubjectFragment(),array[i]);
+
+
+            SubjectFragment fragment = new SubjectFragment();
+            subject.addProperties(fragment,array[i],level);
 
 
 
 
         }
+
         subjectViewPager.setAdapter(subject);
 
 

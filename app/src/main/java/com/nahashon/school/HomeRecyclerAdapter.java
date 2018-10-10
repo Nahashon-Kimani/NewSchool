@@ -50,6 +50,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             public void onClick(View v) {
                 Intent intent = new Intent(context,Subject.class);
                 intent.putExtra("position",positon);
+                intent.putExtra("level",levelArray[positon]);
                 context.startActivity(intent);
             }
         });

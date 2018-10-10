@@ -16,14 +16,18 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.Inflater;
 
 public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecyclerAdapter.MyHolder> {
 
     Context context;
+    List<String> list ;
 
-    public TopicListRecyclerAdapter(Context context) {
+    public TopicListRecyclerAdapter(Context context, List<String> list) {
         this.context = context;
+        this.list = list;
 
 
     }
@@ -42,6 +46,7 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
     public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
 
         myHolder.textView.setText(Integer.toString(i + 1));
+        myHolder.topicName.setText(list.get(i));
         myHolder.topicView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,12 +83,12 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
 
     @Override
     public int getItemCount() {
-        return 20;
+        return list.size();
     }
 
 
     class MyHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView textView,topicName;
         LinearLayout topicView;
         ImageView menuOpener;
 
@@ -92,6 +97,7 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
             textView = view.findViewById(R.id.topicTextView);
             topicView = view.findViewById(R.id.topicView);
             menuOpener = view.findViewById(R.id.menu_opener);
+            topicName = view.findViewById(R.id.topic_name);
 
 
         }
