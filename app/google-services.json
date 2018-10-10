@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "438625702026",
+    "firebase_url": "https://newschool-be2f9.firebaseio.com",
+    "project_id": "newschool-be2f9",
+    "storage_bucket": "newschool-be2f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438625702026:android:3f6f52c4ff606a6b",
+        "android_client_info": {
+          "package_name": "com.nahashon.school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438625702026-7nikj4m17s8pur2nlf5bj0t23muuampp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nahashon.school",
+            "certificate_hash": "ab4022d30a70814bcb6b7f13b2c6d826f8fa8cbb"
+          }
+        },
+        {
+          "client_id": "438625702026-j9b8i934t2483lp2sbr5opso15q130e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFe6OSxLq4d0siEfHG5Mwf6U6Qxcr_bZg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438625702026-j9b8i934t2483lp2sbr5opso15q130e5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
