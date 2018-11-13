@@ -46,7 +46,7 @@ DatabaseReference databaseReference;
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_subject, container, false);
 
-        Bundle bundle = getArguments();
+        final Bundle bundle = getArguments();
 
 
 
@@ -68,7 +68,9 @@ DatabaseReference databaseReference;
 
 
                 }
-               TopicListRecyclerAdapter adapter = new TopicListRecyclerAdapter(getContext(),list);
+               TopicListRecyclerAdapter adapter = new TopicListRecyclerAdapter(getContext(),
+                       list,bundle.getString("Level"),bundle.getString("Subject"));
+
                 adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
 

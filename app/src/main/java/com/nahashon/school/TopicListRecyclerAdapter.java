@@ -16,6 +16,8 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
@@ -24,10 +26,17 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
 
     Context context;
     List<String> list ;
+    int pop =-1;
+    String subject;
+    String level;
 
-    public TopicListRecyclerAdapter(Context context, List<String> list) {
+
+    public TopicListRecyclerAdapter(Context context, List<String> list,String level,String subject) {
         this.context = context;
         this.list = list;
+        this.subject = subject;
+        this.level = level;
+
 
 
     }
@@ -43,16 +52,19 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
 
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
+    public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
 
         myHolder.textView.setText(Integer.toString(i + 1));
         myHolder.topicName.setText(list.get(i));
+
         myHolder.topicView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 context.startActivity(new Intent(context, NoteViewer.class));
             }
         });
+
+
         final PopupMenu popupMenu = new PopupMenu(context, myHolder.menuOpener);
 
         popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
@@ -62,7 +74,15 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.objectives:
-                        Toast.makeText(context, "Objectives", Toast.LENGTH_SHORT).show();
+                        if(pop!=-1) {
+                            Toast.makeText(context, Integer.toString(pop) + "clicked", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(context, ObjectivesActivity.class);
+                            intent.putExtra("Topic", list.get(pop));
+                            intent.putExtra("Level",level);
+                            intent.putExtra("Subject",subject);
+                            context.startActivity(intent);
+                        }
+
                 }
 
 
@@ -73,6 +93,7 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
         myHolder.menuOpener.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                pop =i;
                 popupMenu.show();
 
             }
