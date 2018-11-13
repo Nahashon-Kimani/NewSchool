@@ -40,6 +40,7 @@ public class Subject extends AppCompatActivity {
                     setFragment(getResources().getStringArray(R.array.hiv_drug_awareness),"Hiv/DrugAbuse");
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.aids);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.drug);
+                    subjectTablaout.setTabMode(TabLayout.MODE_FIXED);
 
 
 
@@ -50,6 +51,7 @@ public class Subject extends AppCompatActivity {
                     subjectTablaout.getTabAt(0).setIcon(R.drawable.english);
                     subjectTablaout.getTabAt(1).setIcon(R.drawable.kiswahili);
                     subjectTablaout.getTabAt(2).setIcon(R.drawable.math);
+                    subjectTablaout.setTabMode(TabLayout.MODE_FIXED);
 
                 break ;
 
