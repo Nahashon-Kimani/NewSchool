@@ -35,10 +35,6 @@ DatabaseReference databaseReference;
         super.onCreate(savedInstanceState);
 
 
-
-
-
-
 }
 
     @Override
