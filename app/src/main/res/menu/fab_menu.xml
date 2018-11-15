@@ -4,7 +4,7 @@
         android:id="@+id/ask_teacher"
         android:title="@string/ask_a_teacher"
         android:orderInCategory="100"
-        android:icon="@drawable/circle"/>
+        android:icon="@drawable/ic_teacher"/>
 
     <item android:id="@+id/assignment"
         android:title="@string/assign"
