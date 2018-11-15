@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Subject extends AppCompatActivity {
