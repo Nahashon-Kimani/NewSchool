@@ -25,13 +25,13 @@ import java.util.zip.Inflater;
 public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecyclerAdapter.MyHolder> {
 
     Context context;
-    List<String> list ;
+    List<Topic> list ;
     int pop =-1;
     String subject;
     String level;
 
 
-    public TopicListRecyclerAdapter(Context context, List<String> list,String level,String subject) {
+    public TopicListRecyclerAdapter(Context context, List<Topic> list,String level,String subject) {
         this.context = context;
         this.list = list;
         this.subject = subject;
@@ -55,12 +55,15 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
     public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
 
         myHolder.textView.setText(Integer.toString(i + 1));
-        myHolder.topicName.setText(list.get(i));
+        myHolder.topicName.setText(list.get(i).getTopic_name());
 
         myHolder.topicView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, NoteViewer.class));
+                Intent intent = new Intent(context, NoteViewer.class);
+                intent.putExtra("link",list.get(i).topic_link);
+                intent.putExtra("name",list.get(i).getTopic_name());
+                context.startActivity(intent);
             }
         });
 
@@ -77,10 +80,13 @@ public class TopicListRecyclerAdapter extends RecyclerView.Adapter<TopicListRecy
                         if(pop!=-1) {
                             Toast.makeText(context, Integer.toString(pop) + "clicked", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(context, ObjectivesActivity.class);
-                            intent.putExtra("Topic", list.get(pop));
-                            intent.putExtra("Level",level);
-                            intent.putExtra("Subject",subject);
+//                            intent.putExtra("Topic", list.get(pop));
+//                            intent.putExtra("Level",level);
+//                            intent.putExtra("Subject",subject);
+
+                            intent.putExtra("Objectives",list.get(pop).getTopic_desc());
                             context.startActivity(intent);
+                            pop=-1;
                         }
 
                 }

@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class SubjectFragment extends Fragment {
 RecyclerView recyclerView;
-List<String> list = new ArrayList<>();
+List<Topic> list = new ArrayList<>();
 DatabaseReference databaseReference;
 
     public SubjectFragment() {
@@ -58,7 +58,8 @@ DatabaseReference databaseReference;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot:dataSnapshot.getChildren()){
-                    list.add(snapshot.getKey());
+                   Topic topic = snapshot.getValue(Topic.class);
+                   list.add(topic);
 
 
 
